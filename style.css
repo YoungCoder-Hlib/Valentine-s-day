@@ -1,3 +1,18 @@
 .sectstyle{
-    background-color: burlywood;
+    text-align: center;
+    position: absolute;
+    left: 45%;
+    background-color: rgb(224, 147, 160);
+}
+.h1s{
+    color: rgb(158, 24, 211);
+    font-style: bold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 1px 1px 2px #999;
+}
+body{
+    background-image: url(spcimg.jpg);
+    background-size: 205vh 50vw;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
