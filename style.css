@@ -1,9 +1,11 @@
 .sectstyle{
     text-align: center;
     position: absolute;
-    left: 45%;
+    left: 40%;
     background: transparent;
     background: rgba(224, 147, 160, 0.5);
+    width: 500px;
+    justify-content: center;
 }
 .h1s{
     color: rgb(158, 24, 211);
@@ -19,6 +21,9 @@ body{
     background-attachment: fixed;
 }
 p{
-    color: rgb(129, 221, 8);
-    z-index: 2;
+    background: linear-gradient(45deg, #38adc2, #5816c2, #ebe711);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 24px;
+    font-weight: bold;
 }
