@@ -1,6 +1,15 @@
 let screamer = document.querySelector('#screamer');
 console.log('Script connected.');
+let kysengage = ['false', 'false'];
+let CountOfHearts = 5;
+let saver = document.querySelector("#saver");
+let countjd = document.querySelector('#countjd');
+let btt = document.querySelector('#BuyTheThingy');
+let pwishes = document.querySelector('#p_wishes');
 let flash= document.querySelector('#flash');
+let part1 = document.querySelector('#part1');
+let part2 = document.querySelector('#part2');
+let money = 1;
 const arrayOfLoveWishes = [
     'Кохайте один одного! Це найважливіше!',
     'Будьте щасливі кожної миті!',
@@ -27,9 +36,11 @@ const arrayOfLoveWishes = [
 document.getElementById('btn_wishes').addEventListener('click', () => {
     // alert('Button clicked'); // Для тестування можна розкоментувати
     console.log("Smth should happen");
+    if(CountOfHearts>0){
+    CountOfHearts--;
     let index = Math.floor(Math.random() * arrayOfLoveWishes.length);
-    document.getElementById('p_wishes').innerText = arrayOfLoveWishes[index];
-    if(index==9){
+    pwishes.innerText = arrayOfLoveWishes[index];
+    if(index==9&&kysengage[1]=="false"){
         screamer.style.display = "block";
         screamer.style.opacity = 1;
         setTimeout(function(){
@@ -53,6 +64,43 @@ document.getElementById('btn_wishes').addEventListener('click', () => {
         setTimeout(function(){
             screamer.style.opacity = 0;
             screamer.style.display = "none";
+            kysengage[0] = 'true';
+            kysengage[1] = 'true';
+            arrayOfLoveWishes.splice(9, 1);
+            console.log(arrayOfLoveWishes);
+            setTimeout(function(){
+                saver.style.display="block";
+                CountOfHearts++;
+                setTimeout(function(){
+                saver.style.display="none";
+                }, 2500);
+            }, 100);
         }, 5000);
     }
+    if(kysengage[0] == 'true'){
+        pwishes.innerText = "Just kidding, you are the best.";
+        kysengage[0] = 'false';
+    }
+}
 });
+setInterval(function(){
+    if(CountOfHearts<=0){
+        part1.style.display="none";
+        part2.style.display="block";
+    }
+    if(CountOfHearts>0){
+        part2.style.display="none";
+        part1.style.display="block";
+    }
+});
+setInterval(function(){
+    countjd.innerText = "💝".repeat(CountOfHearts)+"♡".repeat(5-CountOfHearts);
+}, 10)
+btt.addEventListener("click", function(){
+    if(CountOfHearts<5){
+    CountOfHearts++;
+    money-=0.01;
+    console.log("money:" + money);
+    }
+});
+

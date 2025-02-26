@@ -113,5 +113,33 @@ section{
   height: 100%;
   background-color: white;
   opacity: 0;
-  transition: opacity 0.1s;
+  transition: opacity 0.2s;
+}
+#countjd{
+  background-color: #ff03c8;
+  width: 160px;
+  height: 30px;
+  justify-content: center;
+  position: relative;
+  bottom: 15px;
+  right: 15px;
+}
+#BuyTheThingy{
+  position: relative;
+  left: 15px;
+  bottom: 15px;
+}
+#saver{
+  width: 100vw;
+  height: 100vh;
+  background-image: url(totem-of-undying-faked-death.gif);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: none; 
+  position: absolute;
+  z-index: 10;
+  position: fixed;
+}
+#part2{
+  display: none;
 }
